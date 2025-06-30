@@ -12,6 +12,3 @@ if(typeof un === 'number') un.toFixed(2);
 if(typeof un === 'string') un.toUpperCase();
 if(un instanceof Date) un.getTime();
 if(un instanceof HTMLElement) un.nextElementSibling;
-
-
-
