@@ -1,0 +1,22 @@
+body {
+	background-color: #484848;
+	color: wheat;
+}
+
+.env {
+	background-color: hotpink;
+	color: white;
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	margin: 0;
+	pointer-events: none;
+}
+
+h1 {
+	color: whitesmoke;
+}
+
+.figure {
+	background-color: orange;
+}
