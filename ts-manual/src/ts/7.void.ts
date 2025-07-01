@@ -26,6 +26,10 @@ function infiniteLoop():never {
   }
 }
 
+/* generic function */
+// iterator protocol / lazy loop
+// => 일반 반복문에 비해 성능 향상
+
 function* gen():Generator<number, void, void> {
   let count = 0;
   while (true) {
