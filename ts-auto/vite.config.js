@@ -6,5 +6,7 @@ export default defineConfig({
       // generateScopedName: 
     }
   },
-  
+  build: {
+    outDir: 'dist'
+  }
 })
