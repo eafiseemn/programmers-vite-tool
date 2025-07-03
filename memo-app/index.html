@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+	<head>
+		<title>Memo App</title>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script type="module" src="/src/main.ts"></script>
+		<link rel="stylesheet" href="src/reset.css" />
+	</head>
+	<body>
+		<div id="dialog">
+			<div class="pop">
+				<form>
+					<div>
+						<label for="title">제목 : </label>
+						<input type="text" id="title" />
+					</div>
+					<div>
+						<label for="description">내용 : </label>
+						<textarea name="description" id="description"></textarea>
+					</div>
+					<div>
+						<label for="priority">중요도</label>
+						<select name="priority" id="priority">
+							<option value="high">HIGH</option>
+							<option value="medium">MEDIUM</option>
+							<option value="easy">EASY</option>
+						</select>
+					</div>
+					<button type="submit" class="done">만들기!</button>
+				</form>
+				<button type="button" class="close">❌</button>
+			</div>
+		</div>
+
+		<div id="app">
+			<div id="container">
+				<header class="header">
+					<h1><img width="80px" src="/momo-logo.png" alt="memo" /></h1>
+					<span>🐹</span>
+				</header>
+				<main></main>
+				<footer class="footer">
+					<button type="button" class="create">
+						<img src="/plus.svg" alt="추가 아이콘" />
+					</button>
+				</footer>
+			</div>
+		</div>
+	</body>
+</html>
