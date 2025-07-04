@@ -44,12 +44,14 @@ export function handleDragOver(e:DragEvent) {
   const afterElement = getDragAfterElement(main, e.clientY);
 
   if(!draggingEl) return;
-
+  draggingEl.style.transform = `translateY(${e.clientY}px)`
   /* 바꿔치기 */
   if(afterElement === null) {
     main.appendChild(draggingEl);
+    draggingEl.style.transform = `translateY(0)`
   } else {
     main.insertBefore(draggingEl, afterElement);
+    draggingEl.style.transform = `translateY(0)`
       // 현재 드래깅 중인 element를 afterElement 앞에 삽입
   }
 }
