@@ -15,6 +15,7 @@ export type Database = {
           description: string
           hit: number | null
           id: number
+          position: number | null
           priority: Database["public"]["Enums"]["priority_level"]
           title: string
         }
@@ -23,6 +24,7 @@ export type Database = {
           description: string
           hit?: number | null
           id?: number
+          position?: number | null
           priority: Database["public"]["Enums"]["priority_level"]
           title: string
         }
@@ -31,6 +33,7 @@ export type Database = {
           description?: string
           hit?: number | null
           id?: number
+          position?: number | null
           priority?: Database["public"]["Enums"]["priority_level"]
           title?: string
         }
