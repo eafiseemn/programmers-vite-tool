@@ -5,7 +5,13 @@ import type { Tables } from "./supabase/database.types";
 
 let draggingEl: HTMLElement | null = null;
 
+let dragStartTime = 0;
+let dragOverCount = 0;
+
 export function handleDragStart(e:DragEvent) {
+  dragStartTime = performance.now();
+  dragOverCount = 0;
+
   const target = e.target as HTMLElement;
   const memo = target?.closest('.memo') as HTMLElement;
   if (memo && e.dataTransfer) {
@@ -41,6 +47,8 @@ function getDragAfterElement(container:HTMLElement, y:number):HTMLElement | null
 
 export function handleDragOver(e:DragEvent) {
   e.preventDefault();
+  dragOverCount++;
+
   const afterElement = getDragAfterElement(main, e.clientY);
 
   if(!draggingEl) return;
@@ -57,6 +65,10 @@ export function handleDragOver(e:DragEvent) {
 }
 
 export function handleDragEnd() {
+  const dragEndTime = performance.now();
+  console.log(`%c⏱ 드래그 시간: ${(dragEndTime - dragStartTime).toFixed(2)}ms`, 'color: green; font-weight: bold;');
+  console.log(`dragover 발생 횟수: ${dragOverCount}`);
+
   if(draggingEl) {
     draggingEl.classList.remove('dragging');
     draggingEl = null;
